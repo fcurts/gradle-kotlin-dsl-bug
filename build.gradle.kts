@@ -1,3 +1,1 @@
-task("build") {
-  doFirst { println("success!") }
-}
+tasks.register<MyTask>("build")

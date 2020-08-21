@@ -6,10 +6,10 @@ import java.io.File
 
 open class MyTask : DefaultTask() {
   @TaskAction
-  fun foo() {
-    val file = File("foo/bar/baz")
-    project.zipTree(file).visit { details ->
-      println(details)
+  fun run() {
+    if (1 + 1 == 3) { // don't run this, just exists to demonstrate the compilation issue
+      project.zipTree(File("foo/bar/baz")).visit { details -> println(details) }
     }
+    println("success")
   }
 }
